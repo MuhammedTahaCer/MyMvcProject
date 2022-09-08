@@ -26,6 +26,11 @@ namespace MyMvcProject.Controllers
 
             return View();
         }
-
-    }
+        public  ActionResult Test()
+        {
+            return View();
+        }
+            
+            
+            }
 }
