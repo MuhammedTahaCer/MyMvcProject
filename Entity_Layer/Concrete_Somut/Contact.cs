@@ -8,7 +8,7 @@ namespace Entity_Layer.Concrete_Somut
 {
     internal class Contact
     {
-        public int ID { get; set; }
+        public int ContactId { get; set; }
         public string UserName { get; set; }
         public string UserMail { get; set; }
         public string Subject { get; set; }
