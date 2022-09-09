@@ -8,7 +8,7 @@ namespace Entity_Layer.Concrete_Somut
 {
     internal class About
     {
-        public int ID { get; set; }
+        public int AboutId { get; set; }
         public string AboutDetail1 { get; set; }
         public string AboutDetail2 { get; set; }
         public string AboutImage { get; set; }//Resimleri dosya yoluyla ayrı biryerden çekielbilir.

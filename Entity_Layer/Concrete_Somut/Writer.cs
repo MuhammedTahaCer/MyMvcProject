@@ -8,7 +8,7 @@ namespace Entity_Layer.Concrete_Somut
 {
     public class Writer
     {
-        public int ID { get; set; }
+        public int WriterId { get; set; }
         public string WriterName { get; set; }
         public string Surname { get; set; }
         public string Image { get; set; }
