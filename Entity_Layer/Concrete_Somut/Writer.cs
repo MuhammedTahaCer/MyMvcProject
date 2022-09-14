@@ -14,5 +14,9 @@ namespace Entity_Layer.Concrete_Somut
         public string Image { get; set; }
         public string Mail { get; set; }
         public int Password { get; set; }
+
+        public ICollection<Head> HeadProp{ get; set; }
+
+        public ICollection<Content> ContentProp{ get; set; }
     }
 }

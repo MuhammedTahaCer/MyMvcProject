@@ -14,8 +14,7 @@ namespace Entity_Layer.Concrete_Somut
         public bool CategoryStatue { get; set; }//İlişkili tablolarda silme işlemi yerine durumunu aktif pasif etme
 
         //Bu sınıfa bağlı olarak oluşturulacak koleksiyon
-        public ICollection<ICollection> MyProperty { get; set; }//<> içerisinde T istiyor. Bu da bir sınıfa karşılık geliyor.. => HEad.cs tarafı da var
-
-        
+        public ICollection<Head> HeadProp { get; set; }//<> içerisinde T istiyor. Bu da bir sınıfa karşılık geliyor.. => Head.cs tarafı da var
+       
     }
 }

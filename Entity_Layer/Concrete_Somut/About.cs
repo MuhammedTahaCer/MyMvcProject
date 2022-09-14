@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity_Layer.Concrete_Somut
 {
-    internal class About
+    public class About
     {
         public int AboutId { get; set; }
         public string AboutDetail1 { get; set; }

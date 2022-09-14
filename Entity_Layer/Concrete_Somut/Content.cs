@@ -12,7 +12,10 @@ namespace Entity_Layer.Concrete_Somut
         public string ContentText { get; set; }
 
         public int HeadId { get; set; }
-        public virtual ICollection<Content> HeadProp { get; set; }
+        public virtual Head HeadPropV { get; set; }
+
+        public ICollection<Writer> WriterProp{ get; set; }
+        public virtual Writer WriterPropV{ get; set; }
 
     }
 }
