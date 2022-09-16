@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entity_Layer.Concrete_Somut
+namespace EntityLayer.Concrete_Somut
 {
     public class Content
     {
