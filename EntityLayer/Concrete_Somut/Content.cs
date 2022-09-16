@@ -19,7 +19,7 @@ namespace EntityLayer.Concrete_Somut
         public virtual Head Head { get; set; }
 
        // public ICollection<Writer> WriterProp{ get; set; }
-        public int WriterId { get; set; }
+        public int? WriterId { get; set; }//content ilişkisinde herhangi bir cycle veya çoklu istek oluşturmasın diye nullable ekledik
         public virtual Writer Writer { get; set; }//Bire çoklu ilişkilendirme yapıyoruz.
     }
 }
