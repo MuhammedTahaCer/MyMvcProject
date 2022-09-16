@@ -19,7 +19,6 @@ namespace EntityLayer.Concrete_Somut
         public string Image { get; set; }
         [StringLength(50)]
         public string Mail { get; set; }
-        [StringLength(20)]
         public int Password { get; set; }
 
         public ICollection<Head> Heads{ get; set; }
