@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Abstract
+namespace EntityLayer
 {
-    internal interface ICategoryDL
+    public class Class1
     {
     }
 }
