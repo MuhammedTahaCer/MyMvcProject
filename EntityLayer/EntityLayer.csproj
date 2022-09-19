@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Concrete_Somut\About.cs" />
     <Compile Include="Concrete_Somut\Category.cs" />
     <Compile Include="Concrete_Somut\Contact.cs" />
