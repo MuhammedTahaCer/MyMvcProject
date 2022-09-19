@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete_Somut
 {
-    public class Category
+    public class T
     {
         [Key]
         public int CategoryId { get; set; }
