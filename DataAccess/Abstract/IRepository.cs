@@ -17,10 +17,10 @@ namespace DataAccess.Abstract
          *Buradaki interface yapıları generic hale getirildi.
          */
         List<T> List();
-        void Instert(T p);
+        void Insert(T p);
         void Update(T p);
         void Delete(T p);
 
-        List<T> ListMethod(Expression<Func<T, bool>> filter);//Func<>:Parametresi olmayan ancak geriye T delegatetinden değer döündüren metod. Sondaki filter ise metodun ismi. Bu metod miras alınamaz
+        List<T> ListMethod(Expression<Func<T, bool>> myFilter);//Func<>:Parametresi olmayan ancak geriye T delegatetinden değer döündüren metod. Sondaki filter ise metodun ismi. Bu metod miras alınamaz
     }
 }

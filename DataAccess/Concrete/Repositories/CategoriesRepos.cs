@@ -10,40 +10,35 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.Repositories
 {
-    public class Categories:IRepository<T>//IGenericRepository içindeki t; diğer reposlarda değiştirebilrisin
+    public class CategoriesRepos : ICategoryDL//IGenericRepository içindeki t; diğer reposlarda değiştirebilrisin
     {
-       // Context c = new Context();
-        //DbSet<Category> categories;
-
-        public List<T> CategoryList()
+        Context c= new Context();
+        DbSet<Category> _object;
+        public void Delete(Category p)
         {
-            //  return T.ToList();
-            return null;
+            _object.Remove(p);
+            c.SaveChanges();
         }
 
-        public void Delete(T p)
+        public void Insert(Category p)
+        {
+            _object.Add(p);
+            c.SaveChanges();
+        }
+
+        public List<Category> List()
+        {
+            return _object.ToList();
+        }
+
+        public List<Category> ListMethod(Expression<Func<Category, bool>> myFilter)
         {
             throw new NotImplementedException();
         }
 
-        public void Instert(T p)
+        public void Update(Category p)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<T> List()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<T> ListMethod(Expression<Func<T, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(T p)
-        {
-            throw new NotImplementedException();
+            c.SaveChanges();
         }
     }
 }

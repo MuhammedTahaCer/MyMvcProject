@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.Repositories
 {
-    public class GenericRepository<T> : IRepository<T> where T : class
+    public class GenericRepository<T> : IRepository<T> where T : class//Her interface IRepositoryden değer alıyor. GenericRepository Irepository'den miras alıyor. Her bir Interface bir T değerine denk geliyor
     {
         Context c = new Context();
-        DbSet<T> _object;
+        DbSet<T> _object; //T değerne karşılık gelen sınıfı tutan field.
+        //Peki T değerine karşılık gelen sınıfı nasıl bulurum: Constructor
 
         public GenericRepository()
         {
-            _object=c.Set<T>();
+            _object=c.Set<T>(); //Contecte bağlı olarak gönderilen T hangi interface karşılık ise field oradan değer alır. 
         }
         public void Delete(T p)
         {
@@ -24,7 +25,7 @@ namespace DataAccess.Concrete.Repositories
             c.SaveChanges();
         }
 
-        public void Instert(T p)
+        public void Insert(T p)
         {
             _object.Add(p);
             c.SaveChanges();
