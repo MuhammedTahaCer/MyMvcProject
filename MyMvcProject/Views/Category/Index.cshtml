@@ -9,31 +9,57 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div> 
+    <div>
         <h3>Tablo 1</h3>
         <br />
-        <table>
+        <table class="table table-hover">
             <tr>
                 <th>KİMLİK NUMARASI</th>
                 <th>ADI</th>
                 <th>AÇIKLAMA</th>
+                <th>İçerik</th>
                 <th>DURUM</th>
+                <th>İçerik Düzenle</th>
             </tr>
             <tr>
                 <td>1</td>
                 <td>Lorem Ipsum</td>
                 <td>Deneme</td>
                 <td>Dolor Sit Amet!</td>
+                <td>true</td>
+                <td><button class="btn btn-success">Düzenleyin</button> </td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>Lorem Ipsum</td>
                 <td>Deneme</td>
                 <td>Dolor Sit Amet!</td>
+                <td>true</td>
+                <td><button class="btn btn-success">Düzenleyin</button> </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Lorem Ipsum</td>
+                <td>Deneme</td>
+                <td>Dolor Sit Amet!</td>
+                <td>false</td>
+                <td><button class="btn btn-success">Düzenleyin</button> </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Lorem Ipsum</td>
+                <td>Deneme</td>
+                <td>Dolor Sit Amet!</td>
+                <td>true</td>
+                <td><button class="btn btn-success">Düzenleyin</button> </td>
             </tr>
         </table>
+        <button class="btn btn-dark">Yeni Kategori</button>
+        <button class="btn btn-info">Listele - Kategori</button>
+        <button class="btn btn-warning">Açıklama - Kategori</button>
     </div>
 </body>
 </html>
