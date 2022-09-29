@@ -21,6 +21,7 @@ namespace DataAccess.Abstract
         void Update(T p);
         void Delete(T p);
 
-        List<T> ListMethod(Expression<Func<T, bool>> myFilter);//Func<>:Parametresi olmayan ancak geriye T delegatetinden değer döündüren metod. Sondaki filter ise metodun ismi. Bu metod miras alınamaz
+        List<T> ListMethod();//Func<>:Parametresi olmayan ancak geriye T delegatetinden değer döündüren metod. Sondaki filter ise metodun ismi. Bu metod miras alınamaz
+    
     }
 }

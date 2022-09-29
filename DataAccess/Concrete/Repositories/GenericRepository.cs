@@ -46,4 +46,4 @@ namespace DataAccess.Concrete.Repositories
             c.SaveChanges();
         }
     }
-}
+} 

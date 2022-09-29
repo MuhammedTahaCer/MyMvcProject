@@ -12,6 +12,7 @@ namespace DataAccess.Concrete.Repositories
 {
     public class CategoriesRepos : ICategoryDL//IGenericRepository içindeki t; diğer reposlarda değiştirebilrisin
     {
+
         Context c= new Context();
         DbSet<Category> _object;
         public void Delete(Category p)
@@ -33,7 +34,7 @@ namespace DataAccess.Concrete.Repositories
 
         public List<Category> ListMethod(Expression<Func<Category, bool>> myFilter)
         {
-            throw new NotImplementedException();
+              return _object.ToList();
         }
 
         public void Update(Category p)

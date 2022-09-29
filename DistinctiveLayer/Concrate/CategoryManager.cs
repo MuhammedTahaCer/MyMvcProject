@@ -11,7 +11,7 @@ namespace DistinctiveLayer.Concrate
     public class CategoryManager
     {
         GenericRepository<Category>repos=new GenericRepository<Category>();
-        public List<Category>mygetallmethod()
+        public List<Category>CategoryGetBL()
         {
             return repos.List();
         }
