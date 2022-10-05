@@ -1,33 +1,27 @@
 ﻿@using EntityLayer.Concrete_Somut
 @model List<Category>
+
+
 @{
     Layout = null;
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>List Category</title>
-</head>
-<body>
-    <div>
-        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-        <br />
-        <table class="table table-bordered">
-            <tr>
-                <th>ID</th>
-                <th>Ad</th>
-                <th>Açıklama</th>
-                <th>Durum</th>
-            </tr>
-            @foreach (var i in Model)
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<br/>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Açıklama</th>
+        <th>Durum</th>
+    </tr>
+    @foreach(var item in Model)
             {
                 <tr>
-                    <td>@i.CategoryId</td>
+                    <td>@item.CategoryId</td>
                 </tr>
             }
-        </table>
-
-    </div>
-</body>
-</html>
-
+</table>

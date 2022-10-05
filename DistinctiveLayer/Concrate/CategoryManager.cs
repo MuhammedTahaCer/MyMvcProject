@@ -19,14 +19,10 @@ namespace DistinctiveLayer.Concrate
         {
             if (p.CategoryName=="" || p.CategoryName.Length>50 || p.CategoryName.Length<4 ||p.CategoryState=="")
             {
-                alertmessage();
+                //
             } 
             else repos.Insert(p);
         }
 
-        private void alertmessage()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

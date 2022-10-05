@@ -1,4 +1,5 @@
 ﻿using DistinctiveLayer.Concrate;
+using EntityLayer.Concrete_Somut;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,13 @@ namespace MyMvcProject.Controllers
 
         public ActionResult GetMyCategory()
         {
-            var TableCellValue = cm.CategoryGetBL(); //DistinctiveLayer daki sınıfımı çağırmam gerekiyor^^
-            return View(TableCellValue);
+            var cellvalues = cm.CategoryGetBL(); //DistinctiveLayer daki sınıfımı çağırmam gerekiyor^^
+            return View(cellvalues);
+        }
+        public ActionResult AddMyCategory(Category p)
+        {
+            cm.CategoryAddBL(p);
+            return RedirectToAction("GetMyCategory");
         }
     }
 }

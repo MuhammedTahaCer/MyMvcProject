@@ -10,35 +10,34 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.Repositories
 {
-    public class CategoriesRepos : ICategoryDL//IGenericRepository içindeki t; diğer reposlarda değiştirebilrisin
+    public class WritersRepos : IWriterDL
     {
 
-        Context c= new Context();
-        DbSet<Category> _object;
-        public void Delete(Category p)
+        Context c = new Context();
+        DbSet<Writer> _object;
+        public void Delete(Writer p)
         {
             _object.Remove(p);
             c.SaveChanges();
         }
 
-        public void Insert(Category p)
+        public void Insert(Writer p)
         {
             _object.Add(p);
             c.SaveChanges();
         }
 
-        public List<Category> List()
+        public List<Writer> List()
         {
             return _object.ToList();
         }
 
-        public List<Category> FilterList(Expression<Func<Category, bool>> filter)
+        public List<Writer> FilterList(Expression<Func<Writer, bool>> filter)
         {
             return _object.ToList();
         }
 
-
-        public void Update(Category p)
+        public void Update(Writer p)
         {
             c.SaveChanges();
         }

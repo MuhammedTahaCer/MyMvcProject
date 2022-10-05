@@ -9,13 +9,16 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface ICategoryDL: IRepository<Category>
+    public interface ICategoryDL : IRepository<Category>
     {
-        //List<Category> List();
+        //CRUD Örneği
+        List<Category> List();
 
-        //void Insert(Category p);
-        //void Update(Category p);
-        //void Delete(Category p);
-        //// void List(Category p);
+        void Insert(Category p);
+
+        void Update(Category p);
+
+        void Delete(Category p); 
+    
     }
 }

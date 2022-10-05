@@ -13,16 +13,21 @@ namespace DataAccess.Concrete.Repositories
     {
         Context c = new Context();
         DbSet<T> _object; //T değerne karşılık gelen sınıfı tutan field.
-        //Peki T değerine karşılık gelen sınıfı nasıl bulurum: Constructor
 
         public GenericRepository()
         {
-            _object=c.Set<T>(); //Contecte bağlı olarak gönderilen T hangi interface karşılık ise field oradan değer alır. 
+            _object=c.Set<T>();
         }
+
         public void Delete(T p)
         {
             _object.Remove(p);
             c.SaveChanges();
+        }
+
+        public List<T> FilterList(Expression<Func<T, bool>> filter)
+        {
+            return _object.Where(filter).ToList();
         }
 
         public void Insert(T p)
@@ -36,14 +41,12 @@ namespace DataAccess.Concrete.Repositories
             return _object.ToList();
         }
 
-        public List<T> ListMethod(Expression<Func<T, bool>> filter)
-        {
-            return _object.Where(filter).ToList();
-        }
-
         public void Update(T p)
         {
             c.SaveChanges();
         }
+        //Peki T değerine karşılık gelen sınıfı nasıl bulurum: Constructor
+
+
     }
 } 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    internal interface IWriterDL:IRepository<Writer>
+    public interface IWriterDL:IRepository<Writer>
     {
     }
 }
