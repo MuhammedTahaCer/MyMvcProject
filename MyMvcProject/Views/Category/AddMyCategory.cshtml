@@ -3,5 +3,16 @@
     Layout = null;
 }
 
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
 <h1>Yeni KAtegorileri Ekledim Sayfa</h1>
-<br/>
+<br />
+<form class="form-check" method="post">
+    <!--name key değeri  hangi sütuna denk gelecek ise girilen değer; o sütunun adıyla aynı olmalı-->
+    <input type="text" class="form-check" name="CategoryName" placeholder="Kategori adı ekleyin" />
+    <br />
+    <input type="text" class="form-check" name="CategoryStatue" placeholder="Kategori açıklaması ekleyin" />
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+
+</form>

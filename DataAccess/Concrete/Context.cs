@@ -11,7 +11,7 @@ namespace DataAccess.Concrete
         //Context sınıfının içindeki property ler tablo ismi ile sqlde karşılık bulacak
         //Bu layera EF kurmak gerekiyor ***
         //public DbSet<About> Abouts { get; set; } //Entity_Layer katmanını referans verdik <About>
-        public DbSet<EntityLayer.Concrete_Somut.Contact> Categories { get; set; }
+        public DbSet<EntityLayer.Concrete_Somut.Category> Categories { get; set; }
         public DbSet<EntityLayer.Concrete_Somut.Contact> Contacts { get; set; }
         public DbSet<EntityLayer.Concrete_Somut.Content> Contents { get; set; }
         public DbSet<EntityLayer.Concrete_Somut.Head> Heads { get; set; }
