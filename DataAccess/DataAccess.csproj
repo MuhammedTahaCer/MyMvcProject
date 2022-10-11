@@ -63,6 +63,12 @@
     <Compile Include="Concrete\Repositories\CategoriesRepos.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Concrete\Repositories\WritersRepos.cs" />
+    <Compile Include="EntityFrameWorks\EfAboutDL.cs" />
+    <Compile Include="EntityFrameWorks\EfCategoryDL.cs" />
+    <Compile Include="EntityFrameWorks\EfContactDL.cs" />
+    <Compile Include="EntityFrameWorks\EfContentDL.cs" />
+    <Compile Include="EntityFrameWorks\EfHeadDL.cs" />
+    <Compile Include="EntityFrameWorks\EfWriterDL.cs" />
     <Compile Include="Migrations\202209161210179_add-migrain mig1.cs" />
     <Compile Include="Migrations\202209161210179_add-migrain mig1.designer.cs">
       <DependentUpon>202209161210179_add-migrain mig1.cs</DependentUpon>
