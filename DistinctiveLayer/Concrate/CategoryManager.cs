@@ -19,6 +19,14 @@ namespace DistinctiveLayer.Concrate
             _categoryDL=categoryDL;
         }
 
+        public void CategoryAdd(Category category)
+        {
+            _categoryDL.Insert(category);//Insert repositorylerden geliyor.Category Servisimdeki metodumdaki değeri döndürüyorum
+                                         //Category validator değerindeki kontrolü de aşağıda yaptım
+            
+
+        }
+
         //Burası, Generic Repository ile çekilen verilen çekildiği bölüm. Bunun Yerine Servis Kullanılmaya başlandı
         //GenericRepository<Category>repos=new GenericRepository<Category>();
 

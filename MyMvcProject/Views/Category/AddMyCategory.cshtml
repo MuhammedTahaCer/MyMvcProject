@@ -1,4 +1,5 @@
-﻿
+﻿@model EntityLayer.Concrete_Somut.Category
+
 @{
     Layout = null;
 }
@@ -7,12 +8,30 @@
 
 <h1>Yeni KAtegorileri Ekledim Sayfa</h1>
 <br />
-<form class="form-check" method="post">
-    <!--name key değeri  hangi sütuna denk gelecek ise girilen değer; o sütunun adıyla aynı olmalı-->
-    <input type="text" class="form-check" name="CategoryName" placeholder="Kategori adı ekleyin" />
+<!--Validator Sınıfındaki Mesajlarının UI'da Listelenmesi-->
+@using (Html.BeginForm("AddCategory", "Category", FormMethod.Post))//nerede ne zaman işlem göreceğini belirleyecek //Action, Controller, FormMethod
+{
+    <div class="form-group">
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(x => x.CategoryName)<!--Validate ettiğimi sıradaki x değerine bakıyor-->
+        @Html.ValidationMessageFor(x => x.CategoryName)
+        <br /><br />
+        @Html.Label("Açıklama")
+        @Html.TextBoxFor(x => x.CategoryStatue)
+        @Html.ValidationMessageFor(x => x.CategoryStatue)
+
+
+        <br /><br />
+        <button>Kategoryi Kaydet</button>
+    </div>
+}
+
+<!--<form class="form-check" method="post">-->
+<!-- <name key değeri  hangi sütuna denk gelecek ise girilen değer; o sütunun adıyla aynı olmalı> -->
+<!--<input type="text" class="form-check" name="CategoryName" placeholder="Kategori adı ekleyin" />
     <br />
     <input type="text" class="form-check" name="CategoryStatue" placeholder="Kategori açıklaması ekleyin" />
     <br />
     <button class="btn btn-primary">Kaydet</button>
 
-</form>
+</form>-->

@@ -10,5 +10,7 @@ namespace DistinctiveLayer.Abstract
     public interface ICategoryService
     {
         List<Category> GetMyCategory();
+
+        void CategoryAdd (Category category);//Icategoryservice implement
     }
 }
