@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace DistinctiveLayer.RulesFluentValidation
 {
-    public class CategoryValidator:AbstractValidator<Category>
+    public class CategoryValidator : AbstractValidator<Category>
     {
 
         public CategoryValidator()
         {
-           // RuleFor(x => x.CategoryName).NotEmpty().WithMessage("....");
+            // RuleFor(x => x.CategoryName).NotEmpty().WithMessage("....");
         }
 
     }

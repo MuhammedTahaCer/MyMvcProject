@@ -12,6 +12,6 @@ namespace DataAccess.EntityFrameWorks
     public class EfCategoryDL: GenericRepository<Category>, ICategoryDL //bu şekilde hem category.cs miras alınıyor hemde ICategoryDL verileri kullanılabilir
     {
         //Böylece katmanlardaki ilişkili yapıları haberleştiriyorum
-        
+        //category manager üzerinden Categorye değer gönderememiştim, burada bu işlemi yapabiliyoruz    
     }
 }

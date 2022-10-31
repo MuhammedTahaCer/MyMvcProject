@@ -1,26 +1,28 @@
-﻿
+﻿@using EntityLayer.Concrete_Somut
+@model List<Category>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Admin.cshtml";
 }
 
-<table class="table table-bordered" style="margin-top:20px">
-    <tr>
-        <th>ID</th>
-        <th>DURUM</th>
-        <th>KATEGORİ</th>
-    </tr>
+<br />
+<table class="table table-bordered">
 
     <tr>
-        <th>Deneme</th>
-        <th>Açık</th>
-        <th>KAtegori Deneme</th>
-    </tr>
+        <th>Id</th>
+        <th>Kategori Ad</th>
 
-    <tr>
-        <th>Deneme 2</th>
-        <th>Silinmiş</th>
-        <th>KAtegori 2.Deneme</th>
     </tr>
-
+    @foreach (var item in Model)
+    {
+        <tr >
+            <td>@item.CategoryId</td>
+            <td>@item.CategoryName</td>
+            <td><a href="#" class="btn btn-outline-danger"> Sil </a></td>
+            <td><a href="#" class="btn btn-outline-warning"> Güncelle </a></td>
+            <td><a href="#" class="btn btn-outline-primary"> Başlıklar </a></td>
+        </tr>
+    }
 </table>
+<br />
+<a href="/AdminCategory/AddMyCategory" class="btn btn-dark">Yeni Kategori</a>

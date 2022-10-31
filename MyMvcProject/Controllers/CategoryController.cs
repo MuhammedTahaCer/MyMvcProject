@@ -23,7 +23,7 @@ namespace UserInterfaceLayer.Controllers
         }
         public ActionResult GetMyCategory()
         {
-             var cellvalues = myCategoryManager.GetMyCategory();//Artık EFden getiriyor //DistinctiveLayer daki sınıfımı çağırmam gerekiyor^^
+            var cellvalues = myCategoryManager.GetMyCategory();//Artık EFden getiriyor (CategoryManager.cs) //DistinctiveLayer daki sınıfımı çağırmam gerekiyor^^
             return View(cellvalues);
         }
 
@@ -42,7 +42,7 @@ namespace UserInterfaceLayer.Controllers
             if (validationResult.IsValid)
             {
                 myCategoryManager.CategoryAdd(p);
-                return RedirectToAction("GetCategoryList");
+                return RedirectToAction("GetMyCategory");
             }
             else
             {
