@@ -21,7 +21,9 @@ namespace DataAccess.Concrete.Repositories
 
         public void Delete(T p)
         {
-            _object.Remove(p);
+            var deletedEntity=c.Entry(p);
+            deletedEntity.State=EntityState.Deleted;
+            //_object.Remove(p);
             c.SaveChanges();
         }
 
@@ -30,9 +32,16 @@ namespace DataAccess.Concrete.Repositories
             return _object.Where(filter).ToList();
         }
 
+        public T Get(Expression<Func<T, bool>> filter)//birden fazla değer çağıracak metodlar List ile döndürülür, ancak Id gibi tek başına ihtiyaç duyduğumuz değerleri Get ile çağırabiliriz.
+        {
+            return _object.SingleOrDefault(filter);
+        }
+
         public void Insert(T p)
         {
-            _object.Add(p);
+            var newEntity = c.Entry(p);
+            newEntity.State = EntityState.Added;
+            //_object.Add(p);
             c.SaveChanges();
         }
 
@@ -43,6 +52,8 @@ namespace DataAccess.Concrete.Repositories
 
         public void Update(T p)
         {
+            var updatedEntity=c.Entry(p);
+            updatedEntity.State=EntityState.Modified;
             c.SaveChanges();
         }
         //Peki T değerine karşılık gelen sınıfı nasıl bulurum: Constructor

@@ -18,8 +18,9 @@
         <tr >
             <td>@item.CategoryId</td>
             <td>@item.CategoryName</td>
-            <td><a href="#" class="btn btn-outline-danger"> Sil </a></td>
-            <td><a href="#" class="btn btn-outline-warning"> Güncelle </a></td>
+            <td><a href="/AdminCategory/DeletemyCategory/@item.CategoryId" class="btn btn-outline-danger"> Sil </a></td>
+                                                        <!-- Giderken her bir butona bitane id vericeksin-->
+            <td><a href="/AdminCategory/UpdmyCategory/@item.CategoryId" class="btn btn-outline-warning"> Güncelle </a></td>
             <td><a href="#" class="btn btn-outline-primary"> Başlıklar </a></td>
         </tr>
     }

@@ -2283,6 +2283,7 @@
     <Content Include="Views\Shared\_Admin.cshtml" />
     <Content Include="Views\AdminCategory\Index.cshtml" />
     <Content Include="Views\AdminCategory\AddmyCategory.cshtml" />
+    <Content Include="Views\AdminCategory\UpdmyCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

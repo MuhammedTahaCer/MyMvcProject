@@ -23,8 +23,21 @@ namespace DistinctiveLayer.Concrate
         {
             _categoryDL.Insert(category);//Insert repositorylerden geliyor.Category Servisimdeki metodumdaki değeri döndürüyorum
                                          //Category validator değerindeki kontrolü de aşağıda yaptım
-            
+        }
 
+        public void CategoryDelete(Category category)
+        {
+            _categoryDL.Delete(category);//AdminCategoryController.cs içindeki metodda ctgVal denk geleni silecek
+        }
+
+        public void CategoryUpdate(Category category)
+        {
+            _categoryDL.Update(category);
+        }
+
+        public Category GetById(int id)
+        {
+            return _categoryDL.Get(x => x.CategoryId==id); //getirdiğim değerin idye eşit olması, sileceğim satırın buton idsini getirip silinecek satırın idsi ile eşit olması.
         }
 
         //Burası, Generic Repository ile çekilen verilen çekildiği bölüm. Bunun Yerine Servis Kullanılmaya başlandı

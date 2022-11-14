@@ -41,5 +41,10 @@ namespace DataAccess.Concrete.Repositories
         {
             c.SaveChanges();
         }
+
+        public Writer Get(Expression<Func<Writer, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -44,5 +44,29 @@ namespace UserInterfaceLayer.Controllers
             }
             return View();
         }
+
+        public ActionResult DeletemyCategory(int id) //bir view olmayacak sadece index üzerinden çalışacak
+        {
+            var ctgVal=cm.GetById(id);
+            cm.CategoryDelete(ctgVal);//managerde tanımladıktan sonra sil(CategoryDelete) diyorum
+            return RedirectToAction("Index");
+        }
+
+
+        //Update işlemi için 2 adım var. Günc. bilginin güncelleme sayfasına taşınması ve Günc. yapılması
+        [HttpGet]
+        public ActionResult UpdmyCategory(int id)
+        {
+            var ctgValEdt=cm.GetById(id);
+            return View(ctgValEdt);
+        }
+
+        [HttpPost]
+        public ActionResult UpdmyCategory(Category param)
+        {
+            cm.CategoryUpdate(param);
+            return RedirectToAction("Index");
+        }
+
     }
 }

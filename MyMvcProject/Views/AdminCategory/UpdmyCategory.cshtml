@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete_Somut.Category
+@{
+    ViewBag.Title = "UpdmyCategory";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>UpdmyCategory Page</h2>
+
+<!-- model alıyoruz (tıpkı admincategory içinde olduğu gibi)-->
+
+<!-- Html.BeginForm(""): hangi action'a gidecek-->
+@using (Html.BeginForm("UpdmyCategory", "AdminCategory", FormMethod.Post))
+    {
+    <div class="form-group">
+        @Html.Label("Kategori Kimlik Numarası:")
+        @Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control" })
+        <br /><br />
+        @Html.Label("Adı:")
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+        <br /><br />
+        @Html.Label("Açıklaması:")
+        @Html.TextAreaFor(x => x.CategoryState, new { @class = "form-control" })
+
+        <button class="btn btn-check">Güncelle</button>
+    </div>
+}

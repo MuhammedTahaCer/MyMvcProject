@@ -12,5 +12,11 @@ namespace DistinctiveLayer.Abstract
         List<Category> GetMyCategory();
 
         void CategoryAdd (Category category);//Icategoryservice implement
+
+        Category GetById(int id); //Category (dediği bir T aslında) tipinde bir metod tanımladım (manager da implement) ; int id tipinde bir değişken alıcaksın (generic repository)
+
+        void CategoryDelete (Category category);//yeni tanımlanan metod, manager da implement
+
+        void CategoryUpdate (Category category);
     }
 }

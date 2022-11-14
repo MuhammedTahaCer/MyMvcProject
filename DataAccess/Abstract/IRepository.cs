@@ -17,6 +17,8 @@ namespace DataAccess.Abstract
          *Buradaki interface yapıları generic hale getirildi.
          */
         List<T> List();
+        
+        T Get(Expression<Func<T, bool>> filter); //GetById, şimdilik bir şart alıcaksın (Func<T>) ama bunu Distinctive içinde tanımladım.
         void Insert(T p);
         void Update(T p);
         void Delete(T p);
