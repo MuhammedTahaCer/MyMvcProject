@@ -73,6 +73,10 @@
     <Compile Include="Migrations\202209161210179_add-migrain mig1.designer.cs">
       <DependentUpon>202209161210179_add-migrain mig1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202211180822134_changed_wrtirersProp.cs" />
+    <Compile Include="Migrations\202211180822134_changed_wrtirersProp.designer.cs">
+      <DependentUpon>202211180822134_changed_wrtirersProp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -89,6 +93,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202209161210179_add-migrain mig1.resx">
       <DependentUpon>202209161210179_add-migrain mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211180822134_changed_wrtirersProp.resx">
+      <DependentUpon>202211180822134_changed_wrtirersProp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

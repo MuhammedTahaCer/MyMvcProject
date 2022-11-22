@@ -2277,6 +2277,7 @@
     <Content Include="Views\AdminCategory\AddmyCategory.cshtml" />
     <Content Include="Views\AdminCategory\UpdmyCategory.cshtml" />
     <Content Include="Views\Writer\Index.cshtml" />
+    <Content Include="Views\Writer\AddWriter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

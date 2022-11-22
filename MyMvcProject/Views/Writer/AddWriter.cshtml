@@ -1,0 +1,39 @@
+﻿@model EntityLayer.Concrete_Somut.Writer
+@{
+    ViewBag.Title = "AddWriter";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>AddWriter Section</h2>
+
+<br /><!--Gidilecek Action, Gidilecek Controller (Controllera bağlı entity adı) Çalışacağı zaman-->
+@using (Html.BeginForm("AddWriter", "Writer", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Yazar Adı: ")
+        @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterName)
+        <br /><br />
+        @Html.Label("Yazar Soyadı: ")
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Surname)
+        <br /><br />
+        @Html.Label("Yazar Mail Adresi: ")
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Mail)
+        <br /><br />
+        @Html.Label("Yazar Şifresi: ")
+        @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Password)
+        <br /><br />
+        @Html.Label("Yazar Görseli: ")
+        @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Image)
+        <br /><br />
+        @Html.Label("Yazar Bilgileri: ")
+        @Html.TextBoxFor(x => x.About, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.About)
+        <br /><br />
+        <button class="btn btn-outline-secondary">Yazarı Ekle</button>
+    </div>
+}
