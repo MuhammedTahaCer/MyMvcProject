@@ -77,6 +77,10 @@
     <Compile Include="Migrations\202211180822134_changed_wrtirersProp.designer.cs">
       <DependentUpon>202211180822134_changed_wrtirersProp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202211230730247_WriterTitleIsAdded.cs" />
+    <Compile Include="Migrations\202211230730247_WriterTitleIsAdded.designer.cs">
+      <DependentUpon>202211230730247_WriterTitleIsAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -96,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202211180822134_changed_wrtirersProp.resx">
       <DependentUpon>202211180822134_changed_wrtirersProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211230730247_WriterTitleIsAdded.resx">
+      <DependentUpon>202211230730247_WriterTitleIsAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

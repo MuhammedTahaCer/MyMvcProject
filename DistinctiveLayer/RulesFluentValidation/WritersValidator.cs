@@ -18,6 +18,7 @@ namespace DistinctiveLayer.RulesFluentValidation
             RuleFor(x => x.About).NotEmpty().WithMessage("Bu alan Boş Bırakılamaz.");
             RuleFor(x => x.Mail).NotEmpty().WithMessage("Bu alan Boş Bırakılamaz.");
             RuleFor(x => x.Password).NotEmpty().WithMessage("Bu alan Boş Bırakılamaz.");
+            RuleFor(x => x.Title).MaximumLength(24).WithMessage("Çok Fazla Karakter Kullandınız");
             RuleFor(x => x.Mail).Matches("@").WithMessage("Lütfen uygun formatta mail adresi giriniz");
         }
     }

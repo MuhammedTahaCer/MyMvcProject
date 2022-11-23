@@ -23,6 +23,9 @@ namespace EntityLayer.Concrete_Somut
         [StringLength(24)]
         public string Password { get; set; }
 
+        [StringLength(24)]
+        public string Title { get; set; }
+
         public ICollection<Head> Heads{ get; set; }
 
         public ICollection<Content> Contents{ get; set; }
