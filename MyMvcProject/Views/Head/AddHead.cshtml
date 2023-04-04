@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete_Somut.Head
+@{
+    ViewBag.Title = "AddHead";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Konu Başlıkları</h2>
+
+<br />
+<br /><!--Gidilecek Action, Gidilecek Controller (Controllera bağlı entity adı) Çalışacağı zaman-->
+@using (Html.BeginForm("AddHead", "Head", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Konu Başlığı: ")
+        @Html.TextBoxFor(x => x.HeadName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.HeadName)
+        <br /><br />
+        @Html.Label("Başlık Kategori: ")
+        @*@Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryId)*@
+        @Html.DropDownListFor(x=>x.CategoryId, (List<SelectListItem>)ViewBag.list, new {@class="form-control"})
+        <br /><br />
+        @Html.Label("Oluşturan Yazar: ")
+        @Html.TextBoxFor(x => x.WriterId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterId)
+        <br /><br />
+        <button class="btn btn-outline-secondary">Başlığı Oluştur</button>
+    </div>
+}
