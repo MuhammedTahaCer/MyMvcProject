@@ -1,0 +1,40 @@
+﻿@using EntityLayer.Concrete_Somut
+@model List<Head>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+
+<table class="table table-responsive-sm">
+    <br />
+    <br />
+    <tr style="text-align:center">
+        <th>Id</th>
+        <th>Başlık</th>
+        <th>Kategori</th>
+        <th>Yazarı</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center">
+            <td>@item.HeadId</td>
+            <td>@item.HeadName</td>
+            <td>@item.Category.CategoryName</td>
+            <td>@item.Writer.WriterName</td>
+        </tr>
+    }
+
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="display: flex; justify-content: center;" >
+        <span style="padding:3%">
+            <a href="/Head/AddHead" class="btn btn-outline-info"  style="justify-content:end; align-items:flex-end;">Yeni Oluştur</a>
+        </span>
+    </td>
+
+</table>
+<br />
+<br />

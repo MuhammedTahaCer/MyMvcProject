@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface IHeadDL:IRepository<Head>
+    public interface IHeadDL : IRepository<Head>
     {
+        //List<Head> GetHeads();
     }
 }
