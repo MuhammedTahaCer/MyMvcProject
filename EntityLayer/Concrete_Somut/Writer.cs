@@ -13,7 +13,7 @@ namespace EntityLayer.Concrete_Somut
         public int WriterId { get; set; }
         [StringLength(50)]
         public string WriterName { get; set; }
-        [StringLength(50)]
+        [StringLength(100)]
         public string Surname { get; set; }
         [StringLength(100)]
         public string Image { get; set; }
