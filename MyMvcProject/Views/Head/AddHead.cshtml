@@ -16,13 +16,10 @@
         @Html.ValidationMessageFor(x => x.HeadName)
         <br /><br />
         @Html.Label("Başlık Kategori: ")
-        @*@Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.CategoryId)*@
-        @Html.DropDownListFor(x=>x.CategoryId, (List<SelectListItem>)ViewBag.list, new {@class="form-control"})
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.list, new { @class = "form-control" }) @*Contreollerdaki Viewbag ile ; oluşturmuş olduğum listeyi(SelectListItem) 'dropdown' html ögesiyle Listeledim (List<>)**@
         <br /><br />
         @Html.Label("Oluşturan Yazar: ")
-        @Html.TextBoxFor(x => x.WriterId, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.WriterId)
+        @Html.DropDownListFor(y=>y.WriterId, (List<SelectListItem>)ViewBag.list2, new { @class = "form-control" } )
         <br /><br />
         <button class="btn btn-outline-secondary">Başlığı Oluştur</button>
     </div>
