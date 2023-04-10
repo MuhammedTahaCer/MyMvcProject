@@ -15,6 +15,7 @@ namespace UserInterfaceLayer.Controllers
 
         HeadMenager hm= new HeadMenager(new EfHeadDL());
         CategoryManager cm= new CategoryManager(new EfCategoryDL()); // Listede Kategorileri listelemek için CategoryDl dan nesne türetmem gerekicek
+        WriterManager wrm=new WriterManager(new EfWriterDL());
         public ActionResult Index()
         {
             var headingValues=hm.GetHeads();
@@ -22,7 +23,8 @@ namespace UserInterfaceLayer.Controllers
         }
         public ActionResult AddHead()
         {
-          //Ekleme İşlemi Yapılırken DropdownList Oluşturuyoruz
+         //**Ekleme İşlemi Yapılırken DropdownList Oluşturuyoruz**
+
             List<SelectListItem> list = (from x in cm.GetMyCategory()
                                          select new SelectListItem
                                          {
@@ -30,15 +32,28 @@ namespace UserInterfaceLayer.Controllers
                                              Text=x.CategoryName,
                                              Value=x.CategoryId.ToString()
                                          }).ToList();
+
             //Bu listeyi controller üzerinde viewbag ile view'e taşıyorum
-            ViewBag.list = list; 
-          //Ekleme İşlemi Yapılırken DropdownList Oluşturuyoruz
+            ViewBag.list = list;
+
+         //**Ekleme İşlemi Yapılırken DropdownList Oluşturuyoruz**
+
+         //** Yazarlar için ikinci bir dropdown oluşturuyoruz
+            List<SelectListItem> list2 = (from y in wrm.GetList()
+                                          select new SelectListItem
+                                          {
+                                              Text = y.WriterName + " " + y.Surname,
+                                              Value = y.WriterId.ToString()
+                                          }).ToList();
+            ViewBag.list2 = list2;
+         //** Yazarlar için ikinci bir dropdown oluşturuyoruz
+
             return View();
         }
         [HttpPost]
         public ActionResult AddHead(Head heads)
         {
-            //heads.HeadDate= DateTime.Parse(DateTime.Now.ToString());//parse etmeden toShort alamadı. Tarihi null girebildiğim için kapattım
+            heads.HeadDate = DateTime.Parse(DateTime.Now.ToString());//parse etmeden toShort alamadı. Tarihi null girebildiğim için kapattım
             hm.HeadAdd(heads);
             return RedirectToAction("Index");
         }

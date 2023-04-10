@@ -6,35 +6,167 @@
 }
 
 
-<table class="table table-responsive-sm">
-    <br />
-    <br />
-    <tr style="text-align:center">
-        <th>Id</th>
-        <th>Başlık</th>
-        <th>Kategori</th>
-        <th>Yazarı</th>
+@*
+        // Şablondan önceki Test sayfamız...
 
-    </tr>
-    @foreach (var item in Model)
-    {
+        <table class="table table-responsive-sm">
+        <br />
+        <br />
         <tr style="text-align:center">
-            <td>@item.HeadId</td>
-            <td>@item.HeadName</td>
-            <td>@item.Category.CategoryName</td>
-            <td>@item.Writer.WriterName</td>
+            <th>Id</th>
+            <th>Başlık</th>
+            <th>Kategori</th>
+            <th>Yazarı</th>
+
         </tr>
-    }
+        @foreach (var item in Model)
+        {
+            <tr style="text-align:center">
+                <td>@item.HeadId</td>
+                <td>@item.HeadName</td>
+                <td>@item.Category.CategoryName</td>
+                <td>@item.Writer.WriterName</td>
+            </tr>
+        }
 
-    <td></td>
-    <td></td>
-    <td></td>
-    <td style="display: flex; justify-content: center;" >
-        <span style="padding:3%">
-            <a href="/Head/AddHead" class="btn btn-outline-info"  style="justify-content:end; align-items:flex-end;">Yeni Oluştur</a>
-        </span>
-    </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td style="display: flex; justify-content: center;" >
+            <span style="padding:3%">
+                <a href="/Head/AddHead" class="btn btn-outline-info"  style="justify-content:end; align-items:flex-end;">Yeni Oluştur</a>
+            </span>
+        </td>
 
-</table>
-<br />
-<br />
+    </table>*@
+
+@{ 
+    string categorycolor = "";
+    string profilImg ="";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+   <!-- Main content -->
+   <section class="content">
+
+       <!-- Default box -->
+       <div class="card">
+           <div class="card-header"  style="padding: 20px; display: inline; padding-left: 4%; padding-right: 3%; ">
+               <h3 class="card-title" >Konu Başlıkları</h3>
+
+               <div class="card-tools">
+                   <button type="button" class="btn btn-tool" data-card-widget="collapse"datatoggle="tooltip"title="Collapse">
+                       <i class="fas fa-minus"></i>
+                   </button>
+                   <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip"title="Remove">
+                       <i class="fas fa-times"></i>
+                   </button>
+               </div>
+           </div>
+           <div class="card-body p-0">
+               <table class="table table-striped projects">
+                   <thead>
+                       <tr>
+                           <th style="width: 2%">
+                               ID
+                           </th>
+                           <th style="width: 30%">
+                               Başlığın Adı
+                           </th>
+                           <th style="width: 10%">
+                               Yazar
+                           </th>
+                           <th style="width: 25%" class="text-center">
+                               Konusu
+                           </th>
+                           <th style="width: 33%; text-align:center">
+                               İşlem
+                           </th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       @foreach (var item in Model)
+                       {
+
+                           if (item.Category.CategoryId == 1) { categorycolor = "#0fb4ff"; }
+                           else
+                           if (item.Category.CategoryId == 2) { categorycolor = "#bc44e7"; }
+                           else
+                           if (item.Category.CategoryId == 3) { categorycolor = "#f2f3aa"; }
+                           else
+                           if (item.Category.CategoryId == 4) { categorycolor = "#ff4484"; }
+                           else
+                           if (item.Category.CategoryId == 5) { categorycolor = "#29a6ff"; }
+                           else { categorycolor = "green"; }
+
+                           <tr>
+                               <td>
+                                   @item.HeadId
+                               </td>
+                               <td>
+                                   <a>
+                                       @item.HeadName
+                                   </a>
+                                   <br />
+                                   <small>
+                                       @(((DateTime)item.HeadDate).ToString("dd-MM-yyyy"))
+                                   </small>
+                               </td>
+                               <td>
+                                   <ul class="list-inline">
+                                       <li class="list-inline-item">
+                                           <!--Resimler css ve js dosyaları AdminPanel folderinda olduğundan ayrı bir konumdan çekilemiyor.-->
+                                           <img alt="Avatar" class="table-avatar" src="~/AdminPanel/ProfilePhoto/@profilImg">
+                                       </li>
+                                   </ul>
+                               </td>
+                               <td class="project-state">
+                                   <span class="badge badge-success" style="background:@categorycolor; border:none">@item.Category.CategoryName</span>
+                               </td>
+                               <td class="project-actions text-right" style="display:flex; justify-content:center;align-items:center; gap:1%;">
+                                   <a class="btn btn-primary btn-sm" href="#">
+                                       <i class="fas fa-folder">
+                                       </i>
+                                       View
+                                   </a>
+                                   <a class="btn btn-info btn-sm" href="#">
+                                       <i class="fas fa-pencil-alt">
+                                       </i>
+                                       Edit
+                                   </a>
+                                   <a class="btn btn-danger btn-sm" href="#">
+                                       <i class="fas fa-trash">
+                                       </i>
+                                       Delete
+                                   </a>
+                               </td>
+                           </tr>
+                       }
+                   </tbody>
+               </table>
+           </div>
+           <!-- /.card-body -->
+       </div>
+       <!-- /.card -->
+
+   </section>
+   <!-- /.content -->
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here... -->
+        </aside>
+        <!-- /.control-sidebar -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+</body>
+</html>
