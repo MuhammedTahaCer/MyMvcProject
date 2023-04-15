@@ -18,8 +18,8 @@ namespace UserInterfaceLayer.Controllers
         WriterManager wm = new WriterManager(new EfWriterDL());
         public ActionResult Index()
         {
-            var WriterValues = wm.GetList();
-            return View(WriterValues);
+            var writercell = wm.GetList();
+            return View(writercell);
         }
         //Category Validator gibi burada veri akışı doğru sağlatmak için Validator oluşturmamız gerekiyor. Sonrasında Action ları belirtebilriz
         [HttpGet]

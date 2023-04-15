@@ -18,8 +18,8 @@ namespace UserInterfaceLayer.Controllers
         WriterManager wrm=new WriterManager(new EfWriterDL());
         public ActionResult Index()
         {
-            var headingValues=hm.GetHeads();
-            return View(headingValues);
+            var headcell=hm.GetHeads();
+            return View(headcell);
         }
         public ActionResult AddHead()
         {
@@ -57,5 +57,12 @@ namespace UserInterfaceLayer.Controllers
             hm.HeadAdd(heads);
             return RedirectToAction("Index");
         }
+
+
+        public ActionResult ContentByHead() 
+        {
+            return View();
+        }
+
     }
 }

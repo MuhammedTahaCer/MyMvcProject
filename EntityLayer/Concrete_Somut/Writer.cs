@@ -26,6 +26,8 @@ namespace EntityLayer.Concrete_Somut
         [StringLength(24)]
         public string Title { get; set; }
 
+        public bool Status { get; set; } //yazar silme işlemi esnasında durumu aktif-pasif olarak değişecek
+
         public ICollection<Head> Heads{ get; set; }
 
         public ICollection<Content> Contents{ get; set; }
