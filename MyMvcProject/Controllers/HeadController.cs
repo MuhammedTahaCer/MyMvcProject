@@ -58,11 +58,31 @@ namespace UserInterfaceLayer.Controllers
             return RedirectToAction("Index");
         }
 
-
-        public ActionResult ContentByHead() 
+        [HttpGet]
+        public ActionResult EditHead(int id)
         {
-            return View();
+            List<SelectListItem> list = (from x in cm.GetMyCategory()
+                                         select new SelectListItem
+                                         {
+                                             Text = x.CategoryName,
+                                             Value = x.CategoryId.ToString()
+                                         }).ToList();
+            ViewBag.list = list;
+            var headcell=hm.GetById(id);
+            return View(headcell);
+        }
+        [HttpPost]
+        public ActionResult EditHead(Head head)
+        {
+            hm.HeadUpdate(head); return RedirectToAction("Index");
         }
 
+        public ActionResult DeleteHead(int id)
+        {
+            var headcell = hm.GetById(id);
+            headcell.Status = false;
+            hm.HeadDelete(headcell);
+            return RedirectToAction("index");
+        }
     }
 }

@@ -1,0 +1,26 @@
+﻿@using EntityLayer.Concrete_Somut
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Yazar Veri Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Başlık</th>
+        <th>Durumu Belirle </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AboutId</td>
+            <td>Başlık</td>
+            <td> <a href="#" class="btn btn-outline-warning">Aktif</a> <span style="margin:10px"></span>
+            <a href="#" class="btn btn-outline-danger">Pasif</a> </td>
+        </tr>
+    }
+</table>
+
+@Html.Action("AddAboutPw", "About")

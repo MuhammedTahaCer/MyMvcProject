@@ -60,10 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAboutService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\IContentService.cs" />
     <Compile Include="Abstract\IHeadsService.cs" />
     <Compile Include="Abstract\IWritersService.cs" />
+    <Compile Include="Concrate\AboutManager.cs" />
     <Compile Include="Concrate\CategoryManager.cs" />
     <Compile Include="Concrate\ContentManager.cs" />
     <Compile Include="Concrate\HeadMenager.cs" />

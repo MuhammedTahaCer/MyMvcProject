@@ -35,12 +35,15 @@ namespace DistinctiveLayer.Concrate
 
         public void HeadDelete(Head head)
         {
-            _headingdal.Delete(head);
+            //_headingdal.Delete(head); // delete yerine status change
+            _headingdal.Update(head);
         }
 
         public void HeadUpdate(Head head)
         {
             _headingdal.Update(head);
         }
+
+
     }
 }

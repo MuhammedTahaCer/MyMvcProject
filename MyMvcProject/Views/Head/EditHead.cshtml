@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete_Somut.Head
+
+@{
+    ViewBag.Title = "EditHead";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Başlık Güncelleme</h2>
+@using (Html.BeginForm("EditHead", "Head", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.Label("Başlık Adı")
+                    @Html.TextBoxFor(x => x.HeadName, new { @class = "form-control" }) <!--HeadController'daki indexten getirecek'-->
+                    <br />
+                    @Html.Label("Oluşturulma Tarihi")
+                    @Html.TextBoxFor(x => x.HeadDate, new { @class = "form-control" }) <!--HeadController'daki indexten getirecek'-->
+                    <br />
+                    @Html.Label("Bulunduğu Kategori")
+                    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.list, new { @class = "form-control" })
+                    <br />
+                    <a class="btn btn-info btn-sm" href="">
+                        <i class="fas fa-pencil-alt"> </i> Güncelle
+                    </a>
+                </div>
+            }
+

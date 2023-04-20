@@ -28,5 +28,7 @@ namespace EntityLayer.Concrete_Somut
         //Burdan sonra Head'i Content ile ilişkilendirme:
         public ICollection<Content> Contents { get; set; }
 
+        public bool Status { get; set; }
+
     }
 }

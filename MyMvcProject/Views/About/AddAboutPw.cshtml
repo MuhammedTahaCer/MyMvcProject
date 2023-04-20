@@ -1,0 +1,26 @@
+﻿
+<button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    <!--Modal dediği popup oluşturan hazır bir sınıf-->
+    Yazar Bilgisi Gir
+</button>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Yazar Bilgi Girişi</h3>
+            </div>
+            <form method="post" action="/About/AddAbout">
+                <div class="modal-body">
+                    <label>Yazar Hakkında</label>
+                    <input type="text" name="AboutDetail1" value="" class="form-control" /> <br />
+                    <label>Alt Bilgi</label>
+                    <input type="text" name="AboutDetail2" value="" class="form-control" /> <br />
+                    <label>Profil Fotoğrafı</label>
+                    <input type="image" name="AboutImage" value="" class="form-control" /> <br /><!--Yazar Idsine göre Bu sayfayı getirdiğin zaman for ile yazarın resmini value kısmına doldurabilirsin. Veya input yerine img kullanarak bir buton ile ekletebilirsin...-->
+                    <button class="btn btn-outline-info"> Kaydet </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
