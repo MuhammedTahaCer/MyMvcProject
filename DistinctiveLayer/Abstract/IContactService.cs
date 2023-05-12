@@ -9,7 +9,7 @@ namespace DistinctiveLayer.Abstract
 {
     public interface IContactService
     {
-        List<Contact> GetContact();
+        List<Contact> GetList();
         void ContactAdd(Contact contact);
         void ContactRemove(Contact contact);
         void ContactUpdate(Contact contact);

@@ -33,7 +33,7 @@ namespace DistinctiveLayer.Concrate
             _contactDl.Update(contact);
         }
 
-        public List<Contact> GetContact()
+        public List<Contact> GetList()
         {
             return _contactDl.List();
         }

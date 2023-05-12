@@ -57,6 +57,7 @@
     <Compile Include="Abstract\IContactDl.cs" />
     <Compile Include="Abstract\IContentDL.cs" />
     <Compile Include="Abstract\IHeadDL.cs" />
+    <Compile Include="Abstract\IMessageDL.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDL.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="EntityFrameWorks\EfContactDL.cs" />
     <Compile Include="EntityFrameWorks\EfContentDL.cs" />
     <Compile Include="EntityFrameWorks\EfHeadDL.cs" />
+    <Compile Include="EntityFrameWorks\EfMessageDL.cs" />
     <Compile Include="EntityFrameWorks\EfWriterDL.cs" />
     <Compile Include="Migrations\202209161210179_add-migrain mig1.cs" />
     <Compile Include="Migrations\202209161210179_add-migrain mig1.designer.cs">
@@ -92,6 +94,10 @@
     <Compile Include="Migrations\202304160657440_addStatus.cs" />
     <Compile Include="Migrations\202304160657440_addStatus.designer.cs">
       <DependentUpon>202304160657440_addStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305120901476_MessageEnitityforContactManager.cs" />
+    <Compile Include="Migrations\202305120901476_MessageEnitityforContactManager.designer.cs">
+      <DependentUpon>202305120901476_MessageEnitityforContactManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304160657440_addStatus.resx">
       <DependentUpon>202304160657440_addStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305120901476_MessageEnitityforContactManager.resx">
+      <DependentUpon>202305120901476_MessageEnitityforContactManager.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

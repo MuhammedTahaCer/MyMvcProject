@@ -17,10 +17,20 @@ namespace UserInterfaceLayer.Controllers
         ContactValidator cv=new ContactValidator();
         public ActionResult Index()
         {
-            var contactValue = cm.GetContact();
+            var contactValue = cm.GetList();
             return View(contactValue);
         }
 
         //Gelecek ders: Kullanıcıların kendi arasında mesajlaşacağı tablo ve Tarih kısmı db den gelicek (tıkladığında detaya gitmesi gerkiyor birde ama demedi)
+
+        public ActionResult Details(int id) { 
+            var contactValue = cm.GetContact(id);
+            return View(contactValue);
+        }
+
+        public PartialViewResult Message()
+        {
+            return PartialView();
+        }
     }
 }

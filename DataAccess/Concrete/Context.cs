@@ -17,5 +17,6 @@ namespace DataAccess.Concrete
         public DbSet<EntityLayer.Concrete_Somut.Head> Heads { get; set; }
         public DbSet<EntityLayer.Concrete_Somut.Writer> Writers{ get; set; }
         //Context sınıfı ne yapıcak; Buraya yazılan dbset türündeki propları, SQL de birer tablo olarak yansıtacak
+        public DbSet<EntityLayer.Concrete_Somut.Message> Messages{ get; set; }
     }
 }
