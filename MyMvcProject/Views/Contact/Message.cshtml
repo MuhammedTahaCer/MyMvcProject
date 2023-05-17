@@ -1,6 +1,9 @@
-﻿<div class="col-md-3">
+﻿@using EntityLayer.Concrete_Somut
+@model List<Message>
+
+<div class="col-md-3">
     <!-- 63. Ders ile Eklenecek -->
-    <a href="compose.html" class="btn btn-primary btn-block mb-3">Compose</a>
+    <a href="~/Message/NewMessage" class="btn btn-primary btn-block mb-3">Mesaj Yaz</a>
 
     <div class="card">
         <div class="card-header">
@@ -21,13 +24,22 @@
                     </a>
                 </li>
                 <li class="nav-item active">
-                    <a href="~/Contact/Inbox/" class="nav-link">
+                    <a href="~/Message/Inbox/" class="nav-link">
                         <i class="fas fa-mailchimp"></i> Gelen Mesajlar
-                        <span class="badge bg-primary float-right">0</span>
+                        <span class="badge bg-primary float-right">
+                            @*@for (int i = 0; i < Model.Count; i++)
+                            {
+                                if (Model.Count > 0)
+                                {
+                                    <span class="badge bg-primary float-right">@i</span>
+                                }
+                                else {@i= 0; }
+                            }*@
+                        </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="~/Message/Sendbox/" class="nav-link">
                         <i class="far fa-envelope"></i> Gönderilen Mesajlar
                     </a>
                 </li>

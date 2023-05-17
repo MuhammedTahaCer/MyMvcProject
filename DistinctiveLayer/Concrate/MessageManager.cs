@@ -20,7 +20,7 @@ namespace DistinctiveLayer.Concrate
 
         public void AddMessage(Message message)
         {
-            throw new NotImplementedException();
+            _message.Insert(message);
         }
 
         public void DeleteMessage(Message message)
@@ -28,9 +28,13 @@ namespace DistinctiveLayer.Concrate
             throw new NotImplementedException();
         }
 
-        public List<Message> GetList()
+        public List<Message> GetListInbox()
         {
             return _message.FilterList(x => x.receiverMail == "cermuhammed720@gmail.com");
+        }
+        public List<Message> GetListSendbox()
+        {
+            return _message.FilterList(x => x.SenderMail == "cermuhammed720@gmail.com");
         }
 
         public Message GetMessageById(int id)

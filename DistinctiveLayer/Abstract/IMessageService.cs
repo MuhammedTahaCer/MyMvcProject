@@ -9,7 +9,8 @@ namespace DistinctiveLayer.Abstract
 {
      public interface IMessageService
     {
-        List<Message> GetList();
+        List<Message> GetListInbox();
+        List<Message> GetListSendbox();
         Message GetMessageById(int id);
 
         void AddMessage(Message message);
