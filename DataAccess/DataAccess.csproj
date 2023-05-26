@@ -99,6 +99,10 @@
     <Compile Include="Migrations\202305120901476_MessageEnitityforContactManager.designer.cs">
       <DependentUpon>202305120901476_MessageEnitityforContactManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305261101240_dateContact.cs" />
+    <Compile Include="Migrations\202305261101240_dateContact.designer.cs">
+      <DependentUpon>202305261101240_dateContact.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -133,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305120901476_MessageEnitityforContactManager.resx">
       <DependentUpon>202305120901476_MessageEnitityforContactManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305261101240_dateContact.resx">
+      <DependentUpon>202305261101240_dateContact.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

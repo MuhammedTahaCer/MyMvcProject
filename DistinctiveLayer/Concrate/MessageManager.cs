@@ -39,7 +39,7 @@ namespace DistinctiveLayer.Concrate
 
         public Message GetMessageById(int id)
         {
-            throw new NotImplementedException();
+            return _message.Get(x => x.MessageId == id);
         }
 
         public void UpdateMessage(Message message)
